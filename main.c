@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
 #define LONGUEUR 10
@@ -15,8 +16,14 @@ int oiseau3Y=0;
 int oiseau4X=LONGUEUR-1;
 int oiseau4Y=LARGEUR-1;
 char oiseau = 0x6;
+char mur = 0xB;
+char balle = 0xF;
 
 void plateau(){
+    int balleX = rand()%LONGUEUR-1;
+    int balleY = rand()%LARGEUR-1;
+    int mur0X =rand()%LONGUEUR-1;
+    int mur0Y= rand()%LARGEUR-1;
     int background=2 ;
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,background*16);
@@ -24,27 +31,36 @@ void plateau(){
         for (int j = 0; j <LARGEUR ; ++j) {
 
             if(i== snoopyX && j== snoopyY){
-                printf("%c",snoopy);
+                printf("|%c|",snoopy);
             }
             else if(i==oiseau1X && j== oiseau1Y){
-                printf("%c",oiseau);
+                printf("|%c|",oiseau);
             }
             else if(i==oiseau2X && j== oiseau2Y){
-                printf("%c",oiseau);
+                printf("|%c|",oiseau);
             }
             else if(i==oiseau3X && j== oiseau3Y){
-                printf("%c",oiseau);
+                printf("|%c|",oiseau);
             }
             else if(i==oiseau4X && j== oiseau4Y){
-                printf("%c",oiseau);
+                printf("|%c|",oiseau);
+            }
+            else if(balleX==i && j== balleY){
+                printf("|%c|",balle);
+            }
+            else if(mur0X==i && j== mur0Y){
+                printf("|%c|",mur);
             }
             else{
-                printf(" ");
+                printf("| |");
             }
         }
         printf("\n");
     }
+    balleX=(balleX+1)%LONGUEUR-1;
+    balleY=(balleY+1)%LARGEUR-1;
 }
+
 
 char trouver(){
     int nboiseaux;

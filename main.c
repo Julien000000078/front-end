@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <conio.h>
 #include <windows.h>
 #define LONGUEUR 10
@@ -205,8 +206,30 @@ void boucle(){
 
 void menu(){
     int choix;
-    printf("BIENVENUE DANS L'EXPEREINECE SNOOPY!!!\n\n");
-    printf("1.Regles du jeu\n2.Lancer un nouveau Jeu\n3.Charger une partie\n4.Mot de passe\n5.Scores\n6.Quitter\n");
+    printf("BIENVENUE DANS L'EXPEREIENCE SNOOPY!!!\n\n");
+    printf("@@@@@@@@@@@@@@@@@@@@@@&#5J??J5#@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@@@&G7.      :75&@@@@@@\n"
+           "@@@@@@@@@@@&BG5555Y7^            ^G@@@@@\n"
+           "@@@@@@@@@B?:                    : :B@@@@\n"
+           "@@@@@@@&J.         ~P       ..!P5G!?@@@@\n"
+           "@@@@@@@J           .7.     :7JBG#BG^#@@@\n"
+           "@@@@BYB^                   J7#GB##B^B@@@\n"
+           "@@@P^JB!              .?. :YJ&####7?&@@@\n"
+           "@@@#G&&#?:           :~^  .Y7&##B77&@@@@\n"
+           "@@@@@@@@@&G5J?7!~~~^^:   ~Y#?JYJJG@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@&BY. .P@@@@##&@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@@@@P?5@@@@@@@@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@@@B!:7@@@@@@@@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@@Y:   P@@@@@@@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@J   ...P@@@@@@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@B.   7^ ~#@@@@@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@B    J. ~G&@@@@@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@&J:. J!^!5&B#&&@@@@@@@@\n"
+           "@@@@@@@@@@@@@@@@@@@&G77?!G@&5?7?G@@@@@@@\n"
+           "@@@@@@@@@@@@&B5JP5YYY^7! J##&@@@@@@@@@@@\n"
+           "@@@@@@@@@@@&?!!J!^.: ...  .:~P@@@@@@@@@@\n"
+           "@@@@@@@@@@@@##&#BGGBPPGGGGG##&@@@@@@@@@@`\n");
+    printf("\n1.Regles du jeu\n2.Lancer un nouveau Jeu\n3.Charger une partie\n4.Mot de passe\n5.Scores\n6.Quitter\n");
     scanf("%d",&choix);
     switch (choix) {
         case 1:{
@@ -232,6 +255,24 @@ void menu(){
 
         }
         case 4:{
+            char mdp[20];
+            int continuer =1;
+            do {
+                printf("Entrer le mode passe: ");
+                scanf("%s",mdp);
+                if(strcmp(mdp,"NIVEAU1")==0){
+                    boucle();
+                }
+                else if(strcmp(mdp,"NIVEAU2")==0){
+
+                }
+                else if(strcmp(mdp,"NIVEAU3")==0){
+
+                }
+                printf("Ce n'est pas le bon mot de passe.\n Voulez vous reessayer Non:0/ Oui:1");
+                scanf("%d",&continuer);
+            } while (continuer == 1);
+            menu();
 
         }
         case 5:{
